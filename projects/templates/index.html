@@ -1,0 +1,36 @@
+<div class="" style="font-family: 'Jost', sans-serif;">
+    {%extends 'base.html'%}
+    {%block content%}
+    <div class="container-fluid">
+
+        <div class="jumbotron jumbotron-fluid" style="background: black;">
+            <div class="container " style="background: black">
+                <p class="lead" style="color: rgb(200, 255, 0);text-align: center; font-size: 60px;"><b>THIS IS THE AWARD APP </b>
+                </p>
+                <p class="lead" style="color: red;text-align: center;"><b>Get A chance to review other peoples project, or also post </b>
+                </p>
+            </div>
+        </div>
+        <h3>Sample Projects</h3>
+        <div class="row">
+            {%for proj in projects%}
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="view view-cascade overlay">
+                        <img src="{{proj.projectscreenshot.url}}" class="img-fluid" alt="">
+                        <a href="projects/{{proj.id}}">
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="">{{proj.title}}</h5>
+                        <a href="projects/{{proj.id}}">Readmore</a>
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+    </div>
+
+    {%endblock%}
+</div>
